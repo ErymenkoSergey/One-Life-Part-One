@@ -67,21 +67,9 @@ MonoBehaviour:
     m_Scene: {fileID: 102900000, guid: 7b433244bb0354246a7c6a8c682e5441, type: 3}
     RealSceneName: ExampleLevel
     Preview: {fileID: 21300000, guid: 6566c02619a33c04b83af91ef6aa5026, type: 3}
-  - ShowName: Guanaco Desert1
-    m_Scene: {fileID: 102900000, guid: f24ec7bad2335ad4b9111e9575d75fb5, type: 3}
-    RealSceneName: ExampleLevel 1
-    Preview: {fileID: 21300000, guid: 6566c02619a33c04b83af91ef6aa5026, type: 3}
-  - ShowName: Guanaco Desert3
-    m_Scene: {fileID: 102900000, guid: 97f5f6198d3700440a4a078f758d7993, type: 3}
-    RealSceneName: ExampleLevel 2
-    Preview: {fileID: 21300000, guid: 6566c02619a33c04b83af91ef6aa5026, type: 3}
-  - ShowName: Guanaco Desert2
-    m_Scene: {fileID: 102900000, guid: 6d6f4a6916591b845b8467042caa7890, type: 3}
-    RealSceneName: ExampleLevel 3
-    Preview: {fileID: 21300000, guid: 6566c02619a33c04b83af91ef6aa5026, type: 3}
-  - ShowName: Guanaco Desert4
-    m_Scene: {fileID: 102900000, guid: 35900b0c727c61842888d482248503c8, type: 3}
-    RealSceneName: ExampleLevel 4
+  - ShowName: Maniac Mode
+    m_Scene: {fileID: 102900000, guid: 0d48c7b688f198341a180edadb83f89a, type: 3}
+    RealSceneName: ManiacMode_01
     Preview: {fileID: 21300000, guid: 6566c02619a33c04b83af91ef6aa5026, type: 3}
   AllWeapons:
   - Name: Rifle
