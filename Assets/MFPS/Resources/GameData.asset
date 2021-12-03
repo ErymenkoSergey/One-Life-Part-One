@@ -71,6 +71,10 @@ MonoBehaviour:
     m_Scene: {fileID: 102900000, guid: 0d48c7b688f198341a180edadb83f89a, type: 3}
     RealSceneName: ManiacMode_01
     Preview: {fileID: 21300000, guid: 6566c02619a33c04b83af91ef6aa5026, type: 3}
+  - ShowName: Maze Mode
+    m_Scene: {fileID: 102900000, guid: 6291fb833662fff4b8c2670ac1ff064a, type: 3}
+    RealSceneName: Maze_01
+    Preview: {fileID: 21300000, guid: 62549dafad385a44e80dc57af4fe3e78, type: 3}
   AllWeapons:
   - Name: Rifle
     Type: 1
