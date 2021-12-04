@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MazeGenerator
 {
-    internal int Width = 20;
-    internal int Height = 20;
+    internal int Width = 30;
+    internal int Height = 30;
 
     internal Maze GenerateMaze()
     {
@@ -25,6 +25,7 @@ public class MazeGenerator
         Maze maze = new Maze();
 
         maze.cells = cells;
+
         maze.finishPosition = PlaceMazeExit(cells);
 
         return maze;

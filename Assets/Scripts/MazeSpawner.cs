@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class MazeSpawner : MonoBehaviour
 {
-    public CellMaze CellPrefab;
+    public Cell CellPrefab;
+
     public Vector3 CellSize = new Vector3(1, 1, 0);
 
     public Maze maze;
@@ -16,7 +17,7 @@ public class MazeSpawner : MonoBehaviour
         {
             for (int y = 0; y < maze.cells.GetLength(1); y++)
             {
-                CellMaze c = Instantiate(CellPrefab, new Vector3(x * CellSize.x, y * CellSize.y, y * CellSize.z), Quaternion.identity);
+                Cell c = Instantiate(CellPrefab, new Vector3(x * CellSize.x, y * CellSize.y, y * CellSize.z), Quaternion.identity);
 
                 c.WallLeft.SetActive(maze.cells[x, y].WallLeft);
                 c.WallBottom.SetActive(maze.cells[x, y].WallBottom);

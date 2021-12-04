@@ -15469,7 +15469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 874022310613317072, guid: f7165240541e61c4589c856c708a2885,
     type: 3}
-  CellSize: {x: 10, y: 0, z: 10}
+  CellSize: {x: 5, y: 0, z: 5}
 --- !u!1 &1052948063
 GameObject:
   m_ObjectHideFlags: 0
