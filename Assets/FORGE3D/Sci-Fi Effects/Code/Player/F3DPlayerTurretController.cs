@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 namespace FORGE3D
@@ -13,13 +12,8 @@ namespace FORGE3D
 
         void Update()
         {
-           
-            CheckForFire();
-        }
-
-        private void LateUpdate()
-        {
             CheckForTurn();
+            CheckForFire();
         }
 
         void CheckForFire()

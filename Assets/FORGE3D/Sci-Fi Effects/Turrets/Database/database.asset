@@ -47,11 +47,11 @@ MonoBehaviour:
     Breech: {fileID: 0}
     BarrelPrefix: '*SOCKET_'
     WeaponSlotsNames:
-    - '*SOCKET_WEAPON_Right'
     - '*SOCKET_WEAPON_Left'
+    - '*SOCKET_WEAPON_Right'
     WeaponSlots:
-    - {fileID: 1000012793132964, guid: f879231cf12820f49b29468d5bbf34f6, type: 3}
     - {fileID: 1000011467079930, guid: f879231cf12820f49b29468d5bbf34f6, type: 3}
+    - {fileID: 1000012793132964, guid: f879231cf12820f49b29468d5bbf34f6, type: 3}
     WeaponBreeches:
     - {fileID: 1000012838418926, guid: d586665bdccde9145918c2da60ea1def, type: 3}
     - {fileID: 1000012838418926, guid: d586665bdccde9145918c2da60ea1def, type: 3}
@@ -275,5 +275,5 @@ MonoBehaviour:
   - {fileID: 1000012461072786, guid: df2ec686ba2d29a4aa6816b3729f9ec2, type: 3}
   - {fileID: 1000012634698986, guid: e1c916487e237d24db284a05ced42030, type: 3}
   - {fileID: 1000012030464846, guid: f1dfa61b609810d41803a72dba2dce66, type: 3}
-  SelectedTurret: 1
+  SelectedTurret: 4
   WeaponSocket: '*SOCKET_WEAPON_'

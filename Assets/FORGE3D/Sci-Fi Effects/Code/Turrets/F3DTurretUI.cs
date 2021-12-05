@@ -7,7 +7,7 @@ namespace FORGE3D
 {
     public class F3DTurretUI : MonoBehaviour
     {
-        private List<F3DFXController> _fxControllers;
+        public List<F3DFXController> _fxControllers = new List<F3DFXController>();
 
         public Text WeaponTypeText;
 
@@ -19,21 +19,22 @@ namespace FORGE3D
         };
 
         // Use this for initialization
-        void Awake()
+        private void Awake()
         {
-            _fxControllers = new List<F3DFXController>(FindObjectsOfType<F3DFXController>());
+            _fxControllers.AddRange(FindObjectsOfType<F3DFXController>());
         }
 
         private void Start()
         {
-            SetWeaponTypeText();
+            if (_fxControllers.Count > 0)
+                SetWeaponTypeText();
         }
 
         void SetWeaponTypeText()
         {
             WeaponTypeText.text = _fxTypeName[(int) _fxControllers[0].DefaultFXType];
         }
-        
+
         public void OnButtonNext()
         {
             ToggleWeaponType(true);
@@ -52,7 +53,7 @@ namespace FORGE3D
                 else _fx.PrevWeapon();
                 _fx.Stop();
             }
-            
+
             SetWeaponTypeText();
         }
 

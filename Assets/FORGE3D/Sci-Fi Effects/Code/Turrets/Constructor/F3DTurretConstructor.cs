@@ -150,7 +150,7 @@ namespace FORGE3D
                 }
 
                 F3DTurret newScript = this.gameObject.AddComponent<F3DTurret>();
-                
+                newScript.smoothControlling = true;
                 newScript.HeadingLimit.x = -60f;
                 newScript.HeadingLimit.y = 60;
                 newScript.ElevationLimit.x = -60f;

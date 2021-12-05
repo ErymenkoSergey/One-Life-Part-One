@@ -85,7 +85,7 @@ namespace FORGE3D
                         res = true;
                         transforms.RemoveAt(i);
                         readyObjects[templates[j]].Add(obj);
-                        obj.gameObject.SetActive(false); 
+                      
                         if (needSort)
                         {
                             if (needParenting)
@@ -93,8 +93,12 @@ namespace FORGE3D
                                 obj.parent = templatesParent[n];
                             }
                         } 
+                        
                         if (needBroadcasting && broadcastDespawnName != "")
                             obj.BroadcastMessage(broadcastDespawnName, SendMessageOptions.DontRequireReceiver);
+                        
+                        obj.gameObject.SetActive(false); 
+                        
                         break;
                     }
                 }

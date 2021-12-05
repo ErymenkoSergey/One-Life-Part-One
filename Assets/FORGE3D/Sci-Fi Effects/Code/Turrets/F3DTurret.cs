@@ -8,14 +8,6 @@ namespace FORGE3D
     {
         [HideInInspector] public bool destroyIt;
 
-        public enum TurretTrackingType
-        {
-            Step,
-            Smooth,
-        }
-
-        public TurretTrackingType TrackingType;
-
         public GameObject Mount;
         public GameObject Swivel;
 
@@ -37,12 +29,16 @@ namespace FORGE3D
         public Vector2 HeadingLimit;
         public Vector2 ElevationLimit;
 
+        public bool smoothControlling;
+
         public bool DebugDraw;
 
-        public Transform DebugTarget; // TODO Переделать под лист, для захвата нескольких целей
-
+        public Transform DebugTarget; 
+        
         private bool fullAccess;
         public Animator[] Animators;
+        
+        
 
         private void Awake()
         {
@@ -79,7 +75,6 @@ namespace FORGE3D
             StopAnimation();
         }
 
-
         // Autotrack
         public void SetNewTarget(Vector3 _targetPos)
         {
@@ -92,15 +87,12 @@ namespace FORGE3D
             return Vector3.Angle(Mount.transform.forward, targetPos - Mount.transform.position);
         }
 
-        private Vector3 PreviousTargetPosition = Vector3.zero;
-
-        private void FixedUpdate()
+        private void Update()
         {
-            //return;
             if (DebugTarget != null)
                 targetPos = DebugTarget.transform.position;
-
-            if (TrackingType == TurretTrackingType.Step)
+            
+            if (!smoothControlling)
             {
                 if (barrelTransform != null)
                 {
@@ -158,7 +150,7 @@ namespace FORGE3D
                     }
                 }
             }
-            else if (TrackingType == TurretTrackingType.Smooth)
+            else
             {
                 Transform barrelX = barrelTransform;
                 Transform barrelY = Swivel.transform;
@@ -217,7 +209,6 @@ namespace FORGE3D
                 Debug.DrawLine(barrelTransform.position,
                     barrelTransform.position +
                     barrelTransform.forward * Vector3.Distance(barrelTransform.position, targetPos), Color.red);
-
         }
     }
 }

@@ -34,7 +34,7 @@ Material:
     - _InvFade: 3
     - _Mult: 1.82
     - _Twist: 1.78
-    - __dirty: 0
+    - __dirty: 1
     m_Colors:
     - _TintColor: {r: 0, g: 0, b: 0, a: 0}
     - _TintColorA: {r: 0.99999994, g: 0.4344947, b: 0, a: 1}

@@ -135,7 +135,7 @@ namespace FORGE3D
                 rayMuzzle.position = transform.position + transform.forward*0.1f;
 
             // Set beam scaling according to its length
-            lineRenderer.material.SetTextureScale("_BaseMap", new Vector2(propMult, 1f));
+            lineRenderer.material.SetTextureScale("_MainTex", new Vector2(propMult, 1f));
         }
 
         // Generate random noise numbers based on amplitude
@@ -216,7 +216,7 @@ namespace FORGE3D
         {
             // Animate texture UV
             if (AnimateUV)
-                lineRenderer.material.SetTextureOffset("_BaseMap", new Vector2(Time.time*UVTime + initialBeamOffset, 0f));
+                lineRenderer.material.SetTextureOffset("_MainTex", new Vector2(Time.time*UVTime + initialBeamOffset, 0f));
 
             // Process raycasting 
             Raycast();

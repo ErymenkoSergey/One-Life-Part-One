@@ -28,7 +28,6 @@ Material:
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaCutoff: 0.5
     - _Fade: 1
     - _Flicker: 0.22
     - _FresMult: 0.56
@@ -36,19 +35,12 @@ Material:
     - _FresPow: 6.33
     - _FresPowOut: 6.22
     - _InvFade: 8.09
-    - _TessEdgeLength: 16
-    - _TessMax: 25
-    - _TessMaxDisp: 25
-    - _TessMin: 10
-    - _TessPhongStrength: 0.5
-    - _TessValue: 16
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Inter: {r: 0.1, g: 200, b: 35.4, a: 40}
     - _InterScale: {r: 0.1, g: 200, b: 100, a: 0}
     - _TintColor: {r: 0.2352941, g: 0.7784991, b: 1, a: 1}
-    - _bLayerColorA: {r: 0.2394031, g: 0.3970588, b: 0.2665851, a: 0.5019608}
-    - _bLayerColorB: {r: 0.5477688, g: 1, b: 0.33088234, a: 0.5019608}
-    - _bLayerColorC: {r: 0.33809945, g: 0.60294116, b: 0.28817034, a: 0.5019608}
+    - _bLayerColorA: {r: 0.23940313, g: 0.39705884, b: 0.26658514, a: 0.5019608}
+    - _bLayerColorB: {r: 0.5477688, g: 1, b: 0.33088237, a: 0.5019608}
+    - _bLayerColorC: {r: 0.33809948, g: 0.60294116, b: 0.28817037, a: 0.5019608}

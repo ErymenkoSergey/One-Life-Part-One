@@ -10,7 +10,7 @@ Material:
   m_Name: warp_tunnel_001
   m_Shader: {fileID: 4800000, guid: 825f8f2d65c2bdd42bf5aedd4938cb12, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Mask:
         m_Texture: {fileID: 2800000, guid: 0254c2a6a631a41498dceb75602bc58a, type: 3}
-        m_Scale: {x: 1, y: 0.39}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: 499d5da8a7e43fe4c9545b6277a0d554, type: 3}
@@ -44,24 +44,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaCutoff: 0.5
-    - _Boost: 14.03
+    - _Boost: 0.65
     - _Cutoff: 0.5
     - _Exp: 0.66
     - _FadeDistance: 555
-    - _FadeMax: 249.39
-    - _FadeMin: -1862.5
+    - _FadeMax: 757
+    - _FadeMin: 0
     - _InvFade: 3
     - _MaxFadeEnd: 873.4
     - _MaxFadeStart: 400
     - _Opacity: 0
     - _Speed: -15
-    - _TessEdgeLength: 16
-    - _TessMax: 25
-    - _TessMaxDisp: 25
-    - _TessMin: 10
-    - _TessPhongStrength: 0.5
-    - _TessValue: 16
     - _UTile: -0.12
     - _U_TileAnimFactor: -0.17
     - _VTile: -0.64
@@ -81,9 +74,8 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 0.125, g: 0.8189653, b: 1, a: 1}
-    - _TintA: {r: 0.4198113, g: 0.6690373, b: 1, a: 0.047}
+    - _TintA: {r: 0, g: 0.21379304, b: 1, a: 0.047}
     - _TintB: {r: 0, g: 0.54482746, b: 1, a: 1}
     - _TintColor: {r: 0.53677016, g: 0.22102667, b: 0.22755943, a: 0.40784314}
     - _node_6523: {r: 1, g: 1, b: 1, a: 1}

@@ -21,7 +21,7 @@ namespace FORGE3D
         private void Start()
         {
             missileType = F3DMissile.MissileType.Unguided;
-            missileTypeLabel.text = "Missile type: Unguided";
+            missileTypeLabel.text = "Unguided";
         }
 
         // Spawns explosion
@@ -56,17 +56,17 @@ namespace FORGE3D
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 missileType = F3DMissile.MissileType.Unguided;
-                missileTypeLabel.text = "Missile type: Unguided";
+                missileTypeLabel.text = "Unguided";
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 missileType = F3DMissile.MissileType.Guided;
-                missileTypeLabel.text = "Missile type: Guided";
+                missileTypeLabel.text = "Guided";
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 missileType = F3DMissile.MissileType.Predictive;
-                missileTypeLabel.text = "Missile type: Predictive";
+                missileTypeLabel.text = "Predictive";
             }
         }
 

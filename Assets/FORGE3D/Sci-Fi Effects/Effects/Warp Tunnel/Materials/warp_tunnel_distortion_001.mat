@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: warp_tunnel_distortion_001
-  m_Shader: {fileID: 4800000, guid: 23c05bc35a2fdcf4ca744f323eb07014, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5f6862972e6583f46ae08eab034cf66c, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 3001
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -23,17 +23,9 @@ Material:
         m_Texture: {fileID: 2800000, guid: b6f555dea6c55be4c827a78c969bdf42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Mask1:
-        m_Texture: {fileID: 2800000, guid: 552f0d6a3d8716244857aed1d8e0823a, type: 3}
-        m_Scale: {x: 2, y: 7.41}
-        m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: f4c58b44b3f0d65498d43a45a763f4c9, type: 3}
-        m_Scale: {x: 3, y: 3}
-        m_Offset: {x: 0, y: 0}
-    - _Normal1:
-        m_Texture: {fileID: 2800000, guid: 989d5284c72a49540bf9ef6a6409a7fa, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: ea57b59fd7842c848bc4b6931fcc8ddc, type: 3}
+        m_Scale: {x: 5, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Refraction:
         m_Texture: {fileID: 2800000, guid: e3c112a4eaa71e8439ee8945c6545755, type: 3}
@@ -48,14 +40,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Add: 0.16
-    - _Alpha: 0.713
-    - _Alpha1: 1
-    - _AlphaCutoff: 0.5
     - _Cutoff: 0.5
     - _Dist: 24.8
-    - _FadeMax1: 122.49
-    - _FadeMin1: 0
     - _InvFade: 3
     - _MaxFadeEnd: 372.71
     - _MaxFadeStart: 0
@@ -63,21 +49,10 @@ Material:
     - _Opacity: 1
     - _RefractionFactor: 0.99
     - _RefractionIntensity: 1
-    - _Scale: 0.11
-    - _Scale1: 0.06
+    - _Scale: 2.17
     - _Shininess: 0.7
     - _Speed: -15
-    - _TessEdgeLength: 16
-    - _TessMax: 25
-    - _TessMaxDisp: 25
-    - _TessMin: 10
-    - _TessPhongStrength: 0.5
-    - _TessValue: 16
-    - _UTile: 0
-    - _UTile1: 0.005
     - _U_TileAnimFactor: -0.35
-    - _VTile: -0.21
-    - _VTile1: -1.19
     - _V_TileAnimFactor: -0.88
     - _Wiggle: 105.76
     - _WiggleDist: 6.39
@@ -91,7 +66,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _PanUV: {r: 4.58, g: -0.54, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}

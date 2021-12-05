@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WarpJumpTunnel_001_green_linear
-  m_Shader: {fileID: 4800000, guid: cb98487a0fee6024db86b396e806f8d7, type: 3}
+  m_Shader: {fileID: 4800000, guid: f78979fab46897c45865fadbff2811b8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -25,20 +25,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Alpha: 1
-    - _AlphaCutoff: 0.5
     - _EdgeFadeMult: 1.91
     - _EdgeFadePow: 1.32
     - _InvFade: 3
     - _Mult: 2.87
-    - _TessEdgeLength: 16
-    - _TessMax: 25
-    - _TessMaxDisp: 25
-    - _TessMin: 10
-    - _TessPhongStrength: 0.5
-    - _TessValue: 16
     - _Twist: -6.97
     m_Colors:
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0, g: 0, b: 0, a: 0}
     - _TintColorA: {r: 0.01016437, g: 0.6911765, b: 0.12758401, a: 1}
     - _TintColorB: {r: 0.38401997, g: 0.99999994, b: 0.14118175, a: 1}

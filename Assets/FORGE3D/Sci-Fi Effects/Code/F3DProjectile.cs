@@ -58,7 +58,6 @@ namespace FORGE3D
                             delayed = true;
                             break;
                         }
-
                     particles[i].Stop(false);
                     if (!delayed)
                         particles[i].Clear(false);
@@ -76,8 +75,7 @@ namespace FORGE3D
         void ApplyForce(float force)
         {
             if (hitPoint.rigidbody != null)
-                hitPoint.rigidbody.AddForceAtPosition(transform.forward * force, hitPoint.point,
-                    ForceMode.VelocityChange);
+                hitPoint.rigidbody.AddForceAtPosition(transform.forward*force, hitPoint.point, ForceMode.VelocityChange);
         }
 
         void Update()
@@ -92,29 +90,29 @@ namespace FORGE3D
                     switch (fxType)
                     {
                         case F3DFXType.Vulcan:
-                            F3DFXController.instance.VulcanImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                            F3DFXController.instance.VulcanImpact(hitPoint.point + hitPoint.normal*fxOffset);
                             ApplyForce(2.5f);
                             break;
 
                         case F3DFXType.SoloGun:
-                            F3DFXController.instance.SoloGunImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                            F3DFXController.instance.SoloGunImpact(hitPoint.point + hitPoint.normal*fxOffset);
                             ApplyForce(25f);
                             break;
 
                         case F3DFXType.Seeker:
-                            F3DFXController.instance.SeekerImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                            F3DFXController.instance.SeekerImpact(hitPoint.point + hitPoint.normal*fxOffset);
                             ApplyForce(30f);
                             break;
 
                         case F3DFXType.PlasmaGun:
-                            F3DFXController.instance.PlasmaGunImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                            F3DFXController.instance.PlasmaGunImpact(hitPoint.point + hitPoint.normal*fxOffset);
                             ApplyForce(25f);
                             break;
 
                         case F3DFXType.LaserImpulse:
-                            F3DFXController.instance.LaserImpulseImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                            F3DFXController.instance.LaserImpulseImpact(hitPoint.point + hitPoint.normal*fxOffset);
                             ApplyForce(25f);
-                            break;
+                            break; 
                     }
 
                     isFXSpawned = true;
@@ -129,11 +127,10 @@ namespace FORGE3D
             else
             {
                 // Projectile step per frame based on velocity and time
-                Vector3 step = transform.forward * Time.deltaTime * velocity;
+                Vector3 step = transform.forward*Time.deltaTime*velocity;
 
                 // Raycast for targets with ray length based on frame step by ray cast advance multiplier
-                if (Physics.Raycast(transform.position, transform.forward, out hitPoint,
-                    step.magnitude * RaycastAdvance,
+                if (Physics.Raycast(transform.position, transform.forward, out hitPoint, step.magnitude*RaycastAdvance,
                     layerMask))
                 {
                     isHit = true;

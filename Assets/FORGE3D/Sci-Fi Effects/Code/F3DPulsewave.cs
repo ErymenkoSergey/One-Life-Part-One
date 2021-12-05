@@ -31,7 +31,7 @@ namespace FORGE3D
             meshRenderer = GetComponent<MeshRenderer>();
 
             // Get shader property
-            tintColorRef = Shader.PropertyToID("_Color");
+            tintColorRef = Shader.PropertyToID("_TintColor");
 
             // Store default color
             defaultColor = meshRenderer.material.GetColor(tintColorRef);

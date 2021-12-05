@@ -2,8 +2,8 @@
 using System.Collections;
 
 namespace FORGE3D
-{
-    [RequireComponent(typeof(LineRenderer))]
+{ 
+    [RequireComponent(typeof (LineRenderer))]
     public class F3DBeam : MonoBehaviour
     {
         public LayerMask layerMask;
@@ -74,12 +74,12 @@ namespace FORGE3D
 
         // Hit point calculation
         void Raycast()
-        {
+        { 
             // Prepare structure and create ray
             hitPoint = new RaycastHit();
             Ray ray = new Ray(transform.position, transform.forward);
             // Calculate default beam proportion multiplier based on default scale and maximum length
-            float propMult = MaxBeamLength * (beamScale / 10f);
+            float propMult = MaxBeamLength*(beamScale/10f);
 
             // Raycast
             if (Physics.Raycast(ray, out hitPoint, MaxBeamLength, layerMask))
@@ -89,17 +89,17 @@ namespace FORGE3D
                 lineRenderer.SetPosition(1, new Vector3(0f, 0f, beamLength));
 
                 // Calculate default beam proportion multiplier based on default scale and current length
-                propMult = beamLength * (beamScale / 10f);
+                propMult = beamLength*(beamScale/10f);
                 // Spawn prefabs and apply force
                 switch (fxType)
                 {
                     case F3DFXType.Sniper:
-                        F3DFXController.instance.SniperImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                        F3DFXController.instance.SniperImpact(hitPoint.point + hitPoint.normal*fxOffset);
                         ApplyForce(4f);
                         break;
 
                     case F3DFXType.RailGun:
-                        F3DFXController.instance.RailgunImpact(hitPoint.point + hitPoint.normal * fxOffset);
+                        F3DFXController.instance.RailgunImpact(hitPoint.point + hitPoint.normal*fxOffset);
                         ApplyForce(7f);
                         break;
 
@@ -114,7 +114,7 @@ namespace FORGE3D
 
                 // Adjust impact effect position
                 if (rayImpact)
-                    rayImpact.position = hitPoint.point - transform.forward * 0.5f;
+                    rayImpact.position = hitPoint.point - transform.forward*0.5f;
             }
             //checking in 2d mode
             else
@@ -128,18 +128,18 @@ namespace FORGE3D
                     lineRenderer.SetPosition(1, new Vector3(0f, 0f, beamLength));
 
                     // Calculate default beam proportion multiplier based on default scale and current length
-                    propMult = beamLength * (beamScale / 10f);
+                    propMult = beamLength*(beamScale/10f);
                     // Spawn prefabs and apply force
                     switch (fxType)
                     {
                         case F3DFXType.Sniper:
 
-                            F3DFXController.instance.SniperImpact(ray2D.point + ray2D.normal * fxOffset);
+                            F3DFXController.instance.SniperImpact(ray2D.point + ray2D.normal*fxOffset);
                             ApplyForce(4f);
                             break;
 
                         case F3DFXType.RailGun:
-                            F3DFXController.instance.RailgunImpact(ray2D.point + ray2D.normal * fxOffset);
+                            F3DFXController.instance.RailgunImpact(ray2D.point + ray2D.normal*fxOffset);
                             ApplyForce(7f);
                             break;
 
@@ -155,8 +155,8 @@ namespace FORGE3D
                     // Adjust impact effect position
                     if (rayImpact)
                         rayImpact.position = new Vector3(ray2D.point.x,
-                                                 ray2D.point.y,
-                                                 this.gameObject.transform.position.z) - transform.forward * 0.5f;
+                            ray2D.point.y,
+                            this.gameObject.transform.position.z) - transform.forward*0.5f;
                 }
                 // Nothing was his
                 else
@@ -167,16 +167,16 @@ namespace FORGE3D
 
                     // Adjust impact effect position
                     if (rayImpact)
-                        rayImpact.position = transform.position + transform.forward * beamLength;
+                        rayImpact.position = transform.position + transform.forward*beamLength;
                 }
             }
 
             // Adjust muzzle position
             if (rayMuzzle)
-                rayMuzzle.position = transform.position + transform.forward * 0.1f;
+                rayMuzzle.position = transform.position + transform.forward*0.1f;
 
             // Set beam scaling according to its length
-            lineRenderer.material.SetTextureScale("_BaseMap", new Vector2(propMult, 1f));
+            lineRenderer.material.SetTextureScale("_MainTex", new Vector2(propMult, 1f));
         }
 
         // Advance texture frame
@@ -211,9 +211,8 @@ namespace FORGE3D
         void ApplyForce(float force)
         {
             if (hitPoint.rigidbody != null)
-                hitPoint.rigidbody.AddForceAtPosition(transform.forward * force, hitPoint.point,
-                    ForceMode.VelocityChange);
-        }
+                hitPoint.rigidbody.AddForceAtPosition(transform.forward*force, hitPoint.point, ForceMode.VelocityChange);
+        }  
 
         // Set offset of impact
         public void SetOffset(float offset)
@@ -232,8 +231,8 @@ namespace FORGE3D
 
                 if (animateUVTime > 1.0f)
                     animateUVTime = 0f;
-                var v = animateUVTime * UVTime + initialBeamOffset;
-                lineRenderer.material.SetTextureOffset("_BaseMap", new Vector2(v, 0));
+
+                lineRenderer.material.SetTextureOffset("_MainTex", new Vector2(animateUVTime * UVTime + initialBeamOffset, 0f));
             }
 
             // Raycast for laser beams
