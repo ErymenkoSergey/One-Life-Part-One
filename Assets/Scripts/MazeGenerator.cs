@@ -3,29 +3,36 @@ using UnityEngine;
 
 public class MazeGenerator
 {
-    internal int Width = 30;
-    internal int Height = 30;
+    public int Width = 80;
+    public int Height = 80;
 
-    internal Maze GenerateMaze()
+    public Maze GenerateMaze()
     {
         MazeGeneratorCell[,] cells = new MazeGeneratorCell[Width, Height];
 
         for (int x = 0; x < cells.GetLength(0); x++)
+        {
             for (int y = 0; y < cells.GetLength(1); y++)
+            {
                 cells[x, y] = new MazeGeneratorCell { X = x, Y = y };
+            }
+        }
 
         for (int x = 0; x < cells.GetLength(0); x++)
+        {
             cells[x, Height - 1].WallLeft = false;
+        }
 
         for (int y = 0; y < cells.GetLength(1); y++)
+        {
             cells[Width - 1, y].WallBottom = false;
+        }
 
         RemoveWallsWithBacktracker(cells);
 
         Maze maze = new Maze();
 
         maze.cells = cells;
-
         maze.finishPosition = PlaceMazeExit(cells);
 
         return maze;
@@ -45,14 +52,10 @@ public class MazeGenerator
             int x = current.X;
             int y = current.Y;
 
-            if (x > 0 && !maze[x - 1, y].Visited)
-                unvisitedNeighbours.Add(maze[x - 1, y]);
-            if (y > 0 && !maze[x, y - 1].Visited)
-                unvisitedNeighbours.Add(maze[x, y - 1]);
-            if (x < Width - 2 && !maze[x + 1, y].Visited)
-                unvisitedNeighbours.Add(maze[x + 1, y]);
-            if (y < Height - 2 && !maze[x, y + 1].Visited)
-                unvisitedNeighbours.Add(maze[x, y + 1]);
+            if (x > 0 && !maze[x - 1, y].Visited) unvisitedNeighbours.Add(maze[x - 1, y]);
+            if (y > 0 && !maze[x, y - 1].Visited) unvisitedNeighbours.Add(maze[x, y - 1]);
+            if (x < Width - 2 && !maze[x + 1, y].Visited) unvisitedNeighbours.Add(maze[x + 1, y]);
+            if (y < Height - 2 && !maze[x, y + 1].Visited) unvisitedNeighbours.Add(maze[x, y + 1]);
 
             if (unvisitedNeighbours.Count > 0)
             {
@@ -65,8 +68,9 @@ public class MazeGenerator
                 current = chosen;
             }
             else
+            {
                 current = stack.Pop();
-
+            }
         } while (stack.Count > 0);
     }
 
@@ -90,28 +94,20 @@ public class MazeGenerator
 
         for (int x = 0; x < maze.GetLength(0); x++)
         {
-            if (maze[x, Height - 2].DistanceFromStart > furthest.DistanceFromStart)
-                furthest = maze[x, Height - 2];
-            if (maze[x, 0].DistanceFromStart > furthest.DistanceFromStart)
-                furthest = maze[x, 0];
+            if (maze[x, Height - 2].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[x, Height - 2];
+            if (maze[x, 0].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[x, 0];
         }
 
         for (int y = 0; y < maze.GetLength(1); y++)
         {
-            if (maze[Width - 2, y].DistanceFromStart > furthest.DistanceFromStart)
-                furthest = maze[Width - 2, y];
-            if (maze[0, y].DistanceFromStart > furthest.DistanceFromStart)
-                furthest = maze[0, y];
+            if (maze[Width - 2, y].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[Width - 2, y];
+            if (maze[0, y].DistanceFromStart > furthest.DistanceFromStart) furthest = maze[0, y];
         }
 
         if (furthest.X == 0) furthest.WallLeft = false;
         else if (furthest.Y == 0) furthest.WallBottom = false;
-
-        else if (furthest.X == Width - 2)
-            maze[furthest.X + 1, furthest.Y].WallLeft = false;
-
-        else if (furthest.Y == Height - 2)
-            maze[furthest.X, furthest.Y + 1].WallBottom = false;
+        else if (furthest.X == Width - 2) maze[furthest.X + 1, furthest.Y].WallLeft = false;
+        else if (furthest.Y == Height - 2) maze[furthest.X, furthest.Y + 1].WallBottom = false;
 
         return new Vector2Int(furthest.X, furthest.Y);
     }
