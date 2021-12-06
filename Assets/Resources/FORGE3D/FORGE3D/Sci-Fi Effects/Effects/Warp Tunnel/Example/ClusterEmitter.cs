@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using FORGE3D;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class ClusterEmitter : MonoBehaviour
 {
