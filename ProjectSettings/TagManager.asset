@@ -20,6 +20,9 @@ TagManager:
   - Remote
   - WeaponCam
   - IgnoreBullet
+  - LootGun
+  - Point_01
+  - Beton
   layers:
   - Default
   - TransparentFX
@@ -34,7 +37,7 @@ TagManager:
   - MiniMap
   - PostEffects
   - Local
-  - 
+  - Target
   - 
   - Vehicle
   - 
