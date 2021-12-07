@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1617575045}
-  m_IndirectSpecularColor: {r: 0.5444161, g: 0.5070113, b: 0.5242729, a: 1}
+  m_IndirectSpecularColor: {r: 0.5425668, g: 0.5047162, b: 0.52498007, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23598,6 +23598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mobile Control [Dark]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317894033730337839, guid: e3fdd47516bea0e408e84291878b9ab9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3fdd47516bea0e408e84291878b9ab9, type: 3}
