@@ -4531,8 +4531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateOnEnable: 1
   autoUpdate: 1
-  playerscoreboardUIBinding: {fileID: 1218010188959750, guid: 90d8de3224b7eda4a8697afba182e6d4,
-    type: 3}
+  playerscoreboardUIBinding: {fileID: 1218010188959750, guid: 90d8de3224b7eda4a8697afba182e6d4, type: 3}
   TwoTeamScoreboards:
   - {fileID: 2621472617713940862}
   - {fileID: 2621555869794584860}
