@@ -11,7 +11,7 @@ public class bl_GameInput
         if(inputType == GameInputType.Down)return bl_Input.isButton("SingleFire");
         else return GetInputManager("Fire", inputType);
 #else
-        return GetButton(KeyCode.Mouse0, inputType);
+        return bl_MobileInput.GetButton("Fire"); //GetButton(KeyCode.Mouse0, inputType);
 #endif
     }
 
@@ -23,7 +23,7 @@ public class bl_GameInput
         else
             return Input.GetAxis("Vertical") >= 1f;
 #else
-        return GetButton(KeyCode.LeftShift, inputType);
+        return bl_MovementJoystick.Instance.isRunning;// GetButton(KeyCode.LeftShift, inputType);
 #endif
     }
 
@@ -32,7 +32,7 @@ public class bl_GameInput
 #if INPUT_MANAGER
         return GetInputManager("Aim", inputType);
 #else
-        return GetButton(KeyCode.Mouse1, inputType);
+        return bl_MobileInput.GetButton("Aim");// GetButton(KeyCode.Mouse1, inputType);
 #endif
     }
 
@@ -41,7 +41,7 @@ public class bl_GameInput
 #if INPUT_MANAGER
         return GetInputManager("Crouch", inputType);
 #else
-        return GetButton(KeyCode.C, inputType);
+        return bl_MobileInput.GetButtonDown("Crouch");// GetButton(KeyCode.C, inputType);
 #endif
     }
 
@@ -50,7 +50,7 @@ public class bl_GameInput
 #if INPUT_MANAGER
         return GetInputManager("Jump", inputType);
 #else
-        return GetButton(KeyCode.Space, inputType);
+        return bl_MobileInput.GetButtonDown("Jump");// GetButton(KeyCode.Space, inputType);
 #endif
     }
 
@@ -59,7 +59,7 @@ public class bl_GameInput
 #if INPUT_MANAGER
         return GetInputManager("Interact", inputType);
 #else
-        return GetButton(KeyCode.F, inputType);
+        return GetButton(KeyCode.F, inputType); 
 #endif
     }
 
@@ -68,7 +68,7 @@ public class bl_GameInput
 #if INPUT_MANAGER
         return GetInputManager("Reload", inputType);
 #else
-        return GetButton(KeyCode.R, inputType);
+        return bl_MobileInput.GetButtonDown("Reload");// GetButton(KeyCode.R, inputType);
 #endif
     }
 
@@ -152,7 +152,7 @@ public class bl_GameInput
         {
             if (!bl_RoomMenu.Instance.isCursorLocked || bl_GameData.Instance.isChating) return 0;
 #if !INPUT_MANAGER
-            return Input.GetAxis("Vertical");
+            return bl_MovementJoystick.Instance.Vertical;//Input.GetAxis("Vertical");
 #else
             return bl_Input.VerticalAxis;
 #endif
@@ -165,7 +165,7 @@ public class bl_GameInput
         {
             if (!bl_RoomMenu.Instance.isCursorLocked || bl_GameData.Instance.isChating) return 0;
 #if !INPUT_MANAGER
-            return Input.GetAxis("Horizontal");
+            return bl_MovementJoystick.Instance.Horizontal;//Input.GetAxis("Horizontal");
 #else
             return bl_Input.HorizontalAxis;
 #endif
@@ -178,7 +178,7 @@ public class bl_GameInput
         {
             if (!bl_RoomMenu.Instance.isCursorLocked || bl_GameData.Instance.isChating) return 0;
 
-            return Input.GetAxis("Mouse X");
+            return bl_TouchPad.Horizontal;//Input.GetAxis("Mouse X");
         }
     }
 
@@ -188,7 +188,7 @@ public class bl_GameInput
         {
             if (!bl_RoomMenu.Instance.isCursorLocked || bl_GameData.Instance.isChating) return 0;
 
-            return Input.GetAxis("Mouse Y");
+            return bl_TouchPad.Vertical; //Input.GetAxis("Mouse Y");
         }
     }
 

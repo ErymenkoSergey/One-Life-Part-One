@@ -17029,8 +17029,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242757923967460}
-  m_LocalRotation: {x: -0.00000013321377, y: 0.00000006541041, z: -0.000000029802315,
-    w: 1}
+  m_LocalRotation: {x: -0.00000013321377, y: 0.00000006541041, z: -0.000000029802315, w: 1}
   m_LocalPosition: {x: -0.067535825, y: 0.09069845, z: -0.034392998}
   m_LocalScale: {x: 0.9999999, y: 0.9999997, z: 0.9999998}
   m_ConstrainProportionsScale: 0
@@ -22781,8 +22780,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  damageShakerPresent: {fileID: 11400000, guid: 7b88b59570ca07f4abd15843c08a5a15,
-    type: 2}
+  damageShakerPresent: {fileID: 11400000, guid: 7b88b59570ca07f4abd15843c08a5a15, type: 2}
   HitsSound:
   - {fileID: 8300000, guid: 3d4737a2c0fc95d4fadeb16367e672b5, type: 3}
   - {fileID: 8300000, guid: 9ea1f86ddfa38044fb8732cfea0afffd, type: 3}
@@ -22790,8 +22788,7 @@ MonoBehaviour:
   InjuredSounds:
   - {fileID: 8300000, guid: e7f702b86a9744649ab00f031fab816c, type: 3}
   - {fileID: 8300000, guid: 9abaf7cd7ad0fac4dabec80aa8693001, type: 3}
-  KillCamPrefab: {fileID: 1439181263161366, guid: a53a9978b9769cd479c94328d9a626ad,
-    type: 3}
+  KillCamPrefab: {fileID: 1439181263161366, guid: a53a9978b9769cd479c94328d9a626ad, type: 3}
   BodyManager: {fileID: 114884302352415926}
 --- !u!114 &114431274895204640
 MonoBehaviour:
@@ -22809,8 +22806,7 @@ MonoBehaviour:
   AmountOfKits: 3
   ForceImpulse: 350
   CallDelay: 2.4
-  DropCallerPrefab: {fileID: 1934429473589762, guid: 6289f7a1f6879d54598ab9cf80ea9a36,
-    type: 3}
+  DropCallerPrefab: {fileID: 1934429473589762, guid: 6289f7a1f6879d54598ab9cf80ea9a36, type: 3}
   InstancePoint: {fileID: 4200561039191204}
   SpawnSound: {fileID: 8300000, guid: bb6d16be40c037c458f1246183a22439, type: 3}
 --- !u!114 &114856045477800702
@@ -34775,8 +34771,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611393452875222}
-  m_LocalRotation: {x: -0.00015878673, y: 0.00000005960463, z: -0.00000014901158,
-    w: 1}
+  m_LocalRotation: {x: -0.00015878673, y: 0.00000005960463, z: -0.00000014901158, w: 1}
   m_LocalPosition: {x: 0.019930732, y: 0.10492079, z: 0.029921787}
   m_LocalScale: {x: 0.9999999, y: 0.9999997, z: 0.9999998}
   m_ConstrainProportionsScale: 0
@@ -34902,8 +34897,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627725487643000}
-  m_LocalRotation: {x: 0.102268025, y: -0.000000105239465, z: 0.0000000018626454,
-    w: 0.9947569}
+  m_LocalRotation: {x: 0.102268025, y: -0.000000105239465, z: 0.0000000018626454, w: 0.9947569}
   m_LocalPosition: {x: -0.13350478, y: 0.000000013038475, z: -0.00000003306184}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46498,8 +46492,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963243675279790}
-  m_LocalRotation: {x: 0.00015860789, y: 0.000000059604616, z: -0.00000014901154,
-    w: 1}
+  m_LocalRotation: {x: 0.00015860789, y: 0.000000059604616, z: -0.00000014901154, w: 1}
   m_LocalPosition: {x: 0.019930735, y: 0.104920805, z: -0.029921757}
   m_LocalScale: {x: 0.9999999, y: 0.9999997, z: 0.9999998}
   m_ConstrainProportionsScale: 0
@@ -76885,8 +76878,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5189523557541964821}
-  m_LocalRotation: {x: 0.0000000023283064, y: 0.000000029802322, z: -0.016711691,
-    w: 0.9998604}
+  m_LocalRotation: {x: 0.0000000023283064, y: 0.000000029802322, z: -0.016711691, w: 0.9998604}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -127209,8 +127201,7 @@ MonoBehaviour:
   CrossHairScale: 25
   bulletInstanceMethod: 1
   BulletName: bullet
-  bulletPrefab: {fileID: 1338248142525780293, guid: 9f7247cdad860cb46be5b3c83e2b5407,
-    type: 3}
+  bulletPrefab: {fileID: 1338248142525780293, guid: 9f7247cdad860cb46be5b3c83e2b5407, type: 3}
   grenade: {fileID: 0}
   muzzleFlash: {fileID: 1995562704}
   muzzlePoint: {fileID: 6942258267096841325}
