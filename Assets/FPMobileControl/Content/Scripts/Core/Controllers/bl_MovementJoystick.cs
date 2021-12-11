@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Lovatto.MobileInput;
 
 public class bl_MovementJoystick : MonoBehaviour
@@ -17,15 +15,22 @@ public class bl_MovementJoystick : MonoBehaviour
     {
         get
         {
+            //Debug.Log("Get Axis Vert 0");
             if (!bl_MobileInput.Interactable) return 0;
 #if UNITY_EDITOR
             if (bl_MobileInputSettings.Instance.UseKeyboardOnEditor)
             {
+                //Debug.Log("Get Axis Vert ");
                 return Input.GetAxis("Vertical");
             }
 #endif
-            if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
+            if (Cursor.lockState == CursorLockMode.Locked) 
+            { 
+                Cursor.lockState = CursorLockMode.None;
+                //Debug.Log("Get Axis Vert 1");
+            }
             UpdateRunningAlpha(sourceJoystick.Vertical);
+            Debug.Log("Get Axis Vert 3");
             return sourceJoystick.Vertical;
         }
     }
@@ -38,6 +43,7 @@ public class bl_MovementJoystick : MonoBehaviour
 #if UNITY_EDITOR
             if (bl_MobileInputSettings.Instance.UseKeyboardOnEditor)
             {
+                Debug.Log("Get Axis Horiz ");
                 return Input.GetAxis("Horizontal");
             }
 #endif
@@ -60,9 +66,6 @@ public class bl_MovementJoystick : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void UpdateRunningAlpha(float vertical)
     {
         if (runningAlpha == null) return;

@@ -139,9 +139,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         isControlable = bl_MatchTimeManager.Instance.TimeState == RoomTimeState.Started;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     protected override void OnEnable()
     {
         bl_EventHandler.onRoundEnd += OnRoundEnd;
@@ -155,9 +152,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
 #endif
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     protected override void OnDisable()
     {
         bl_EventHandler.onRoundEnd -= OnRoundEnd;
@@ -171,9 +165,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
 #endif
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public override void OnUpdate()
     {
         Velocity = m_CharacterController.velocity;
@@ -295,9 +286,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         m_PreviouslyGrounded = m_CharacterController.isGrounded;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public override void OnFixedUpdate()
     {
         if (Finish)
@@ -428,9 +416,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         bl_EventHandler.DispatchPlayerLandEvent();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnCrouchChanged()
     {
         if (Crounching)
@@ -457,19 +442,13 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         bl_UCrosshair.Instance.OnCrouch(Crounching);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void DoCrouchTransition()
     {
         StopCoroutine(nameof(CrouchTransition));
         StartCoroutine(nameof(CrouchTransition));
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+    // <returns></returns>
     IEnumerator CrouchTransition()
     {
         bool isCrouch = Crounching || State == PlayerState.Sliding;
@@ -604,9 +583,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         State = PlayerState.Gliding;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnGliding()
     {
         desiredMove = (m_Transform.forward * m_Input.y) + (m_Transform.right * m_Input.x);
@@ -622,9 +598,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         m_CollisionFlags = m_CharacterController.Move(m_MoveDir * Time.fixedDeltaTime);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnClimbing()
     {
         if (m_Ladder.HasPending)
@@ -709,9 +682,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void GetInput(out float speed)
     {
         if (!isControlable) { speed = 0; return; }
@@ -814,9 +784,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void PlayFootStepAudio(bool b)
     {
         if (State == PlayerState.Sliding) return;
@@ -833,9 +800,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void PlatformJump(float force)
     {
         hasPlatformJump = true;
@@ -862,9 +826,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
     }
 #endif
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void RotateView()
     {
         if (!isClimbing)
@@ -877,9 +838,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void CheckStates()
     {
         if (lastState == State) return;
@@ -887,9 +845,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         lastState = State;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void PlayLandingSound(float vol = 1)
     {
         vol = Mathf.Clamp(vol, 0.05f, 1);
@@ -898,9 +853,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         m_AudioSource.Play();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     private void PlayJumpSound()
     {
         m_AudioSource.volume = 1;
@@ -916,10 +868,7 @@ public class bl_FirstPersonController : bl_MonoBehaviour
     void OnGameSettingsChanged() => mouseLook.FetchSettings();
     void OnAimChange(bool aim) => mouseLook.OnAimChange(aim);
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+
     public bool IsHeadHampered()
     {
         Vector3 origin = m_Transform.localPosition + m_CharacterController.center + Vector3.up * m_CharacterController.height * 0.5F;
@@ -927,9 +876,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         return Physics.Raycast(origin, Vector3.up, dist);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnRoundEnd()
     {
         Finish = true;
@@ -942,9 +888,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         bl_UIReferences.Instance.JumpLadder.SetActive(isClimbing);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     IEnumerator MoveTo(Vector3 pos, bool down)
     {
         if (m_Transform == null) m_Transform = transform;
@@ -966,9 +909,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         MoveToStarted = false;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
@@ -1017,9 +957,6 @@ public class bl_FirstPersonController : bl_MonoBehaviour
         }
     }
 
-    /// <summary>
-    ///
-    /// </summary>
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         surfaceNormal = hit.normal;

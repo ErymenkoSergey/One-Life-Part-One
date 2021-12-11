@@ -13,9 +13,6 @@ public static class bl_MobileInput
     private static List<int> touchesList;
     private static Dictionary<string, bl_MobileButton> mobileButtons = new Dictionary<string, bl_MobileButton>();
 
-    /// <summary>
-    /// 
-    /// </summary>
     public static void Initialize()
     {
         touchesList = new List<int>();
@@ -24,9 +21,6 @@ public static class bl_MobileInput
         Interactable = true;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public static void AddMobileButton(bl_MobileButton button)
     {
         if (mobileButtons.ContainsKey(button.ButtonName)) { Debug.LogWarning($"A button with the name '{button.ButtonName}' is already registered, buttons with the same name are not allowed."); return; }
@@ -34,9 +28,6 @@ public static class bl_MobileInput
         mobileButtons.Add(button.ButtonName, button);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public static void RemoveMobileButton(bl_MobileButton button)
     {
         if (!mobileButtons.ContainsKey(button.ButtonName)) { return; }
@@ -44,9 +35,6 @@ public static class bl_MobileInput
         mobileButtons.Remove(button.ButtonName);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="buttonName"></param>
     /// <returns></returns>
     public static bl_MobileButton Button(string buttonName)
