@@ -11,6 +11,7 @@ public class bl_GameInput
         if(inputType == GameInputType.Down)return bl_Input.isButton("SingleFire");
         else return GetInputManager("Fire", inputType);
 #else
+        Debug.Log("Fire dassad ");
         return bl_MobileInput.GetButton("Fire"); //GetButton(KeyCode.Mouse0, inputType);
 #endif
     }
@@ -50,6 +51,7 @@ public class bl_GameInput
 #if INPUT_MANAGER
         return GetInputManager("Jump", inputType);
 #else
+        Debug.Log("Jump dassad ");
         return bl_MobileInput.GetButtonDown("Jump");// GetButton(KeyCode.Space, inputType);
 #endif
     }

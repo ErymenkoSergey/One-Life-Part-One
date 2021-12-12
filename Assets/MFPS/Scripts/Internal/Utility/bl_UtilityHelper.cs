@@ -106,9 +106,6 @@ public static class bl_UtilityHelper
     }
     public static bool BlockCursorForUser = false;
 
-    /// <summary>
-    /// 
-    /// </summary>
     public static bool GetCursorState
     {
         get
@@ -141,7 +138,7 @@ public static class bl_UtilityHelper
 #if MFPSM && UNITY_EDITOR
             if (EditorApplication.isRemoteConnected) return true;
 #endif
-            return false;
+            return false; // false
 #endif
         }
     }

@@ -26,26 +26,17 @@ public class bl_MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private bool hasDispatchUp = false;
     private bool isRegistered = false;
 
-    /// <summary>
-    /// 
-    /// </summary>
     void Awake()
     {
         Registre();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnEnable()
     {
         //also try in OnEnable cuz in some Unity versions OnEnable calls before Awake :/
         Registre();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void Registre()
     {
         if (!isRegistered)
@@ -62,30 +53,19 @@ public class bl_MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnDestroy()
     {
         if (isRegistered)
-        {
             bl_MobileInput.RemoveMobileButton(this);
-        }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+    // <returns></returns>
     public bool isButton()
     {
         return buttonState == ButtonState.Down || buttonState == ButtonState.Click;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+    // <returns></returns>
     public bool isButtonDown()
     {
         if (buttonState == ButtonState.Idle || buttonState == ButtonState.Up) return false;
@@ -96,10 +76,7 @@ public class bl_MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         else { hasDispatchClick = true; return true; }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+    // <returns></returns>
     public bool isButtonUp()
     {
         if (buttonState == ButtonState.Idle || buttonState != ButtonState.Up) return false;
@@ -109,9 +86,6 @@ public class bl_MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         return true;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void OnPointerDown(PointerEventData eventData)
     {
         buttonState = ButtonState.Click;
@@ -128,9 +102,6 @@ public class bl_MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if(animatedChild != null) { StopAllCoroutines();StartCoroutine(DoAnimation(true)); }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void OnPointerUp(PointerEventData eventData)
     {
         buttonState = ButtonState.Up;
@@ -147,27 +118,18 @@ public class bl_MobileButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         if (animatedChild != null) { StopAllCoroutines(); StartCoroutine(DoAnimation(false)); }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="callback"></param>
     public void AddOnClickListener(UnityAction callback)
     {
         onClick.AddListener(callback);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="callback"></param>
     public void RemoveOnClickListener(UnityAction callback)
     {
         onClick.RemoveListener(callback);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     IEnumerator DoAnimation(bool forward)
     {
         float d = 0;

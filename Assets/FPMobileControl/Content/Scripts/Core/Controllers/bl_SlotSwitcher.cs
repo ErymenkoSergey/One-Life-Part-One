@@ -18,9 +18,11 @@ public class bl_SlotSwitcher : MonoBehaviour
     public delegate void OnChangeSlotHandler(object sender, SlotChangeEventArgs e);
     public static event OnChangeSlotHandler onChangeSlotHandler;
 
-    /// <summary>
-    /// 
-    /// </summary>
+    private void Start()
+    {
+        //slotsData = bl_GunManager.instance.AllGuns;
+    }
+
     /// <param name="icons"></param>
     public void SetSlotsData(SlotData[] icons)
     {
@@ -28,9 +30,6 @@ public class bl_SlotSwitcher : MonoBehaviour
         SetupCurrentSlot();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void SetDataForSlot(int slotID, SlotData data)
     {
         if(slotsData.Length <= slotID) { Debug.LogWarning($"You are trying to set data for a non-setup slot."); return; }
@@ -38,9 +37,6 @@ public class bl_SlotSwitcher : MonoBehaviour
         SetupCurrentSlot();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void FireChangeSlotEvent(bool isForward)
     {
         if (onChangeSlotHandler == null) return;
@@ -54,9 +50,6 @@ public class bl_SlotSwitcher : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="newSelectedSlot"></param>
     public void ChangeSlot(int newSelectedSlot)
     {
@@ -64,9 +57,6 @@ public class bl_SlotSwitcher : MonoBehaviour
         SetupCurrentSlot();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="isForward"></param>
     void DoChange(bool isForward)
     {
@@ -75,9 +65,6 @@ public class bl_SlotSwitcher : MonoBehaviour
         SetupCurrentSlot();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     /// <param name="newData"></param>
     public void AddNewSlot(SlotData newData)
     {
@@ -91,9 +78,6 @@ public class bl_SlotSwitcher : MonoBehaviour
         SetupCurrentSlot();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void SetupCurrentSlot()
     {
         if (WeaponNameText != null)
@@ -126,7 +110,9 @@ public class bl_SlotSwitcher : MonoBehaviour
     {
         get
         {
-            if (_MovementJoystick == null) { _MovementJoystick = FindObjectOfType<bl_SlotSwitcher>(); }
+            if (_MovementJoystick == null)  
+                _MovementJoystick = FindObjectOfType<bl_SlotSwitcher>(); 
+
             return _MovementJoystick;
         }
     }
