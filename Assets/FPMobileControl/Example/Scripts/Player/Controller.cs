@@ -23,7 +23,7 @@ namespace Lovatto.MobileInput
         public Transform CameraPosition;
 
         [Header("Control Settings")]
-        public float MouseSensitivity = 100.0f;
+        public float MouseSensitivity = 5.0f; // TODO 100
         public float PlayerSpeed = 5.0f;
         public float RunningSpeed = 7.0f;
         public float JumpSpeed = 5.0f;

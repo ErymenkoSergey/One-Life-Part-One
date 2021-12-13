@@ -15,22 +15,16 @@ public class bl_MovementJoystick : MonoBehaviour
     {
         get
         {
-            //Debug.Log("Get Axis Vert 0");
             if (!bl_MobileInput.Interactable) return 0;
 #if UNITY_EDITOR
             if (bl_MobileInputSettings.Instance.UseKeyboardOnEditor)
-            {
-                //Debug.Log("Get Axis Vert ");
                 return Input.GetAxis("Vertical");
-            }
+            
 #endif
             if (Cursor.lockState == CursorLockMode.Locked) 
-            { 
                 Cursor.lockState = CursorLockMode.None;
-                //Debug.Log("Get Axis Vert 1");
-            }
+            
             UpdateRunningAlpha(sourceJoystick.Vertical);
-            Debug.Log("Get Axis Vert 3");
             return sourceJoystick.Vertical;
         }
     }
@@ -42,10 +36,8 @@ public class bl_MovementJoystick : MonoBehaviour
             if (!bl_MobileInput.Interactable) return 0;
 #if UNITY_EDITOR
             if (bl_MobileInputSettings.Instance.UseKeyboardOnEditor)
-            {
-                Debug.Log("Get Axis Horiz ");
                 return Input.GetAxis("Horizontal");
-            }
+            
 #endif
             if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
             return sourceJoystick.Horizontal;
@@ -58,9 +50,7 @@ public class bl_MovementJoystick : MonoBehaviour
         {
 #if UNITY_EDITOR
             if (bl_MobileInputSettings.Instance.UseKeyboardOnEditor)
-            {
                 return Input.GetKeyDown(KeyCode.LeftShift);
-            }
 #endif
             return (Vertical >= RunningOnMagnitudeOf);
         }

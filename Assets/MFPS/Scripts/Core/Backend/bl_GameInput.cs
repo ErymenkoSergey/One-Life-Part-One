@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class bl_GameInput 
 {
-    public static bool Fire(GameInputType inputType = GameInputType.Hold)
+    public static bool Fire(GameInputType inputType = GameInputType.Down)
     {
 #if INPUT_MANAGER
         if(inputType == GameInputType.Down)return bl_Input.isButton("SingleFire");
         else return GetInputManager("Fire", inputType);
 #else
-        Debug.Log("Fire dassad ");
         return bl_MobileInput.GetButton("Fire"); //GetButton(KeyCode.Mouse0, inputType);
 #endif
     }
