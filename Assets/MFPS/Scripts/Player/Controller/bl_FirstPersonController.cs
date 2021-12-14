@@ -211,7 +211,8 @@ public class bl_FirstPersonController : bl_MonoBehaviour
             else return;
         }
 
-        if (bl_UtilityHelper.isMobile) return;
+        if (bl_UtilityHelper.isMobile) 
+            return;
 
         if (!m_Jump && State != PlayerState.Crouching && (Time.time - lastJumpTime) > JumpMinRate)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ef7d0aa8c049a459b1eeaafe00eb28, type: 3}
   m_Name: MobileInputSettings
   m_EditorClassIdentifier: 
-  m_UseKeyboardOnEditor: 0
+  m_UseKeyboardOnEditor: 1
   touchPadVerticalSensitivity: 2
   touchPadHorizontalSensitivity: 2
   useAutoFire: 0

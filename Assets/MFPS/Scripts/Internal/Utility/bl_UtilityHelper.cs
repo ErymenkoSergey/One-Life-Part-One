@@ -160,9 +160,6 @@ public static class bl_UtilityHelper
         return angle * (Vector3.Dot(axis, Vector3.Cross(dirA, dirB)) < 0 ? -1 : 1);
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public static void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume, AudioSource sourc)
     {
         GameObject obj2 = new GameObject("One shot audio")
