@@ -10,9 +10,6 @@ public class bl_FreeForAll : MonoBehaviour, IGameMode
     private bool isSub = false;
     public List<Player> FFAPlayerSort = new List<Player>();
 
-    /// <summary>
-    /// 
-    /// </summary>
     void Awake()
     {
         if (!PhotonNetwork.IsConnected)
@@ -21,9 +18,6 @@ public class bl_FreeForAll : MonoBehaviour, IGameMode
         Initialize();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void OnDisable()
     {
         if (isSub)
@@ -32,9 +26,6 @@ public class bl_FreeForAll : MonoBehaviour, IGameMode
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void OnPlayerPropertiesUpdate(Player target, ExitGames.Client.Photon.Hashtable changedProps)
     {
         if (changedProps.ContainsKey(PropertiesKeys.KillsKey))
@@ -43,9 +34,6 @@ public class bl_FreeForAll : MonoBehaviour, IGameMode
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void CheckScore()
     {
         if (!bl_RoomSettings.Instance.RoomInfoFetched) return;
@@ -79,10 +67,6 @@ public class bl_FreeForAll : MonoBehaviour, IGameMode
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
     public Player GetBestPlayer()
     {
         if (FFAPlayerSort.Count > 0 && FFAPlayerSort != null)
