@@ -905,9 +905,6 @@ public class bl_AIShooterAgent : bl_AIShooter
         forceUpdateRotation = true;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void SetDestination(Vector3 position, float stopedDistance, bool checkRate = false)
     {
         if (checkRate && (time - lastDestinationTime) < 2) return;
@@ -917,9 +914,6 @@ public class bl_AIShooterAgent : bl_AIShooter
         lastDestinationTime = time;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     void SetCrouch(bool crouch)
     {
         if (crouch && (AgentState == AIAgentState.Following || AgentState == AIAgentState.Looking))

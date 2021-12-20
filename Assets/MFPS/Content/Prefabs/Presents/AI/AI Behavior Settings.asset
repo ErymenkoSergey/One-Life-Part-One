@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AI Behavior Settings
   m_EditorClassIdentifier: 
   agentBehave: 0
-  weaponAccuracy: 1
+  weaponAccuracy: 0
   GetRandomTargetOnStart: 1
   forceFollowAtHalfHealth: 0
   checkEnemysWhenHaveATarget: 1
   targetOutRangeBehave: 0
-  maxCoverTime: 10
+  maxCoverTime: 20
   randomCoverProbability: 0.1
