@@ -138,6 +138,8 @@ PlayerSettings:
   bundleVersion: 1.0
   preloadedAssets:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -769,11 +771,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HideAndSeek
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: C:\Unity\SCP_Horror\One-Life-Part-One\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: ESV GS
+  metroCertificateIssuer: ESV GS
+  metroCertificateNotAfter: 80c1180aec15d901
   metroApplicationDescription: HideAndSeek
   wsaImages: {}
   metroTileShortName: One-Life-Part-One
@@ -835,7 +837,7 @@ PlayerSettings:
   luminVersion:
     m_VersionCode: 1
     m_VersionName: 
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 3
   activeInputHandler: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
